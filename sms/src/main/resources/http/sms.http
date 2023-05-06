@@ -1,0 +1,10 @@
+POST http://{{host}}:8085/sms/v1/api/create
+Content-Type: application/json
+
+{
+  "phone": "18722268416",
+  "smsEnum": "TEST",
+  "templateParams": {
+    "1": "测试短信"
+  }
+}

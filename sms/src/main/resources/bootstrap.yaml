@@ -1,0 +1,53 @@
+server:
+  port: 8085
+  servlet:
+    context-path: /sms
+spring:
+  application:
+    name: sms
+  cloud:
+    nacos:
+      discovery:
+        enabled: true # 如果不想使用 Nacos 进行服务注册和发现, 设置为 false 即可
+        server-addr: 127.0.0.1:8848
+        namespace: 817a39d2-c288-4b6f-8c5e-86b421b5b01e
+        username: deta #deta
+        password: Deta2020 #Deta2020
+      config:
+        server-addr: 127.0.0.1:8848
+        name: sms-base-remote
+        file-extension: yml  # 配置内容的数据格式, 默认为 properties
+        enabled: true     # 如果不想使用 Nacos 进行配置管理, 设置为 false 即可
+        group: SMS_GROUP  # 组, 默认为 DEFAULT_GROUP
+        namespace: 817a39d2-c288-4b6f-8c5e-86b421b5b01e
+sms:
+  # 是否开启短信发送限制 默认false
+  restricted: true
+  # 以下设置仅在开启短信发送限制后生效
+  # 是否使用redis进行缓存 默认false
+  redis-cache: false
+  # 单账号每日最大发送量
+  account-max: 20
+  # 单账号每分钟最大发送
+  minute-max: 2
+  #默认厂商配置来源 此处为枚举设置，支持sql和配置文件，默认为从yml配置文件获取，如无需求可不改变
+  config-type: config-file
+  #启用框架banner打印，默认开启状态
+  is-print: true
+  #核心线程池大小
+  corePoolSize: 10
+  #最大线程数
+  maxPoolSize: 30
+  #队列容量
+  queueCapacity: 50
+  #设置线程池关闭的时候等待所有任务都完成再继续销毁其他的Bean
+  shutdownStrategy: true
+  cloopen:
+    # 访问键标识
+    accessKeyId: 8a216da8643658de01644ed3204e0d17
+    # 访问键秘钥
+    accessKeySecret: 201a27e201c340558e30b58096fa8df2
+    # 应用 ID
+    appId: 8a216da8643658de01644fb1fee40d73
+    # REST API Base URL
+    baseUrl: https://app.cloopen.com:8883/2013-12-26
