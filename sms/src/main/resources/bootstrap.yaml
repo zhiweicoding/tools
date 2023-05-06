@@ -18,7 +18,7 @@ spring:
         name: sms-base-remote
         file-extension: yml  # 配置内容的数据格式, 默认为 properties
         enabled: true     # 如果不想使用 Nacos 进行配置管理, 设置为 false 即可
-        group: SMS_GROUP  # 组, 默认为 DEFAULT_GROUP
+        group: DEFAULT_GROUP  # 组, 默认为 DEFAULT_GROUP
         namespace: 817a39d2-c288-4b6f-8c5e-86b421b5b01e
 sms:
   # 是否开启短信发送限制 默认false

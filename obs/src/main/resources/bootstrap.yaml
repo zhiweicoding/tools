@@ -19,3 +19,24 @@ spring:
         bucket-name: ??
         domain: ?? # 访问域名，注意“/”结尾，例如：https://abc.cos.ap-nanjing.myqcloud.com/
         base-path: hy/ # 基础路径
+  application:
+    name: obs
+  cloud:
+    nacos:
+      discovery:
+        enabled: true # 如果不想使用 Nacos 进行服务注册和发现, 设置为 false 即可
+        server-addr: 127.0.0.1:8848
+        namespace: 817a39d2-c288-4b6f-8c5e-86b421b5b01e
+        username: deta #deta
+        password: Deta2020 #Deta2020
+      config:
+        server-addr: 127.0.0.1:8848
+        name: obs-base-remote
+        file-extension: yml  # 配置内容的数据格式, 默认为 properties
+        enabled: true     # 如果不想使用 Nacos 进行配置管理, 设置为 false 即可
+        group: DEFAULT_GROUP  # 组, 默认为 DEFAULT_GROUP
+        namespace: 817a39d2-c288-4b6f-8c5e-86b421b5b01e
+server:
+  port: 8086
+  servlet:
+    context-path: /obs
