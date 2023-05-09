@@ -17,4 +17,18 @@ public interface SaveService {
      */
     void save(MultipartFile file);
 
+
+    /**
+     * exist
+     *
+     * @param key {@link String}
+     */
+    boolean exist(String key);
+
+    /**
+     * @param url {@link String}
+     * @param path {@link String}
+     * @return {@link byte[]}
+     */
+    byte[] download(String url, String path);
 }
